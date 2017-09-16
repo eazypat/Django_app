@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>List</title>
+{% endblock %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">Home</a></li>
+<li class="breadcrumb-item"><a href="../create">Create</a></li>
+</ol>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% for human in humans %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ human.name }}</td>
+      <td>{{ human.email }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Create</title>
+{% endblock %}
+
+{% block content %}
+    <h1>New Human</h1>
+    <br>
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../">Home</a></li>
+    <li class="breadcrumb-item"><a href="../list">List</a></li>
+    </ol>
+
+ <form method="POST">{% csrf_token %}
+  <div class="form-group">
+      {{ form }}      
+  </div>
+     <button type="submit" class="btn btn-primary">Add</button>
+</form>
+{% endblock %}
